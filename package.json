@@ -12,11 +12,17 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
+    "formik": "^0.11.11",
+    "gh-pages": "^1.1.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-markdown": "^3.3.0",
+    "styled-components": "^3.2.3",
+    "yup": "^0.24.1"
   },
   "devDependencies": {
-    "nwb": "0.21.x"
+    "nwb": "0.21.x",
+    "raw-loader": "^0.5.1"
   },
   "author": "",
   "license": "MIT",
