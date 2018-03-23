@@ -93,7 +93,7 @@ export default class Thumb extends Component {
 
     return (
       <Wrapper innerRef={this._wrapperRef}>
-        <img width={300} height={300} alt={file.name} ref={this._imgRef} />
+        <img alt={file.name} ref={this._imgRef} />
         <Face innerRef={this._faceRef} />
         <Eye innerRef={this._leftEyeRef} />
         <Eye innerRef={this._rightEyeRef} />

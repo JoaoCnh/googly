@@ -28,7 +28,7 @@ export default class Example extends Component {
   render() {
     return (
       <div>
-        <input type="file" onChange={this._handleUpload} multiple />
+        <input type="file" onChange={this._handleUpload} />
 
         <hr />
 
