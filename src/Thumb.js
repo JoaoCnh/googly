@@ -37,7 +37,7 @@ export default class Thumb extends Component {
     faces.forEach(face => {
       const { top, left, width, height } = face.boundingBox;
 
-      this.wrapper.style.cssText = `
+      this.face.style.cssText = `
             width: ${width}px;
             height: ${height}px;
             top: ${top}px;
