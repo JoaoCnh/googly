@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
 
+import Example from "./Example";
+
 import instructions from "./instructions.md";
 
 const Container = styled.div`
@@ -34,14 +36,12 @@ class App extends Component {
   }
 
   render() {
-    const { isEnabled } = this.state;
-
     let content = null;
 
-    if (!isEnabled) {
+    if (!this.state.isEnabled) {
       content = <ReactMarkdown source={instructions} />;
     } else {
-      content = <h1>Why hello there!</h1>;
+      content = <Example />;
     }
 
     return (
