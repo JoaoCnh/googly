@@ -29,53 +29,60 @@ export default class Thumb extends Component {
   _wrapperRef = wrapper => (this.wrapper = wrapper);
   _rightEyeRef = rightEye => (this.rightEye = rightEye);
 
-  componentDidMount() {
-    const reader = new FileReader();
-    const faceDetector = new FaceDetector();
+  _detectFaces = async () => {
+    const faceDetector = new window.FaceDetector();
 
-    reader.onloadend = async () => {
-      this.img.src = reader.result;
-      const faces = await faceDetector.detect(this.img);
+    const faces = await faceDetector.detect(this.img);
 
-      faces.forEach(face => {
-        const { top, left, width, height } = face.boundingBox;
+    faces.forEach(face => {
+      const { top, left, width, height } = face.boundingBox;
 
-        this.wrapper.style.cssText = `
+      this.wrapper.style.cssText = `
             width: ${width}px;
             height: ${height}px;
             top: ${top}px;
             left: ${left}px;
         `;
 
-        face.landmarks.forEach((landmark, index) => {
-          const { x, y } = landmark.location;
+      face.landmarks.forEach((landmark, index) => {
+        const { x, y } = landmark.location;
 
-          switch (landmark.type) {
-            case "eye":
-              const css = `
+        switch (landmark.type) {
+          case "eye":
+            const css = `
                     width: 35%;
                     height: 35%;
                     top: ${y - top}px;
                     left: ${x - left}px;
                 `;
 
-              if (index === 0) {
-                this.leftEye.style.cssText = css;
-              } else {
-                this.rightEye.style.cssText = css;
-              }
-              break;
-            case "mouth":
-              this.mouth.style.cssText = `
+            if (index === 0) {
+              this.leftEye.style.cssText = css;
+            } else {
+              this.rightEye.style.cssText = css;
+            }
+            break;
+          case "mouth":
+            this.mouth.style.cssText = `
                     width: 50%;
                     height: 20%;
                     top: ${y - top}px;
                     left: ${x - left}px;
                 `;
-              break;
-          }
-        });
+            break;
+        }
       });
+    });
+  };
+
+  componentDidMount() {
+    const reader = new FileReader();
+
+    reader.onloadend = () => {
+      this.img.src = reader.result;
+
+      // welp
+      setTimeout(this._detectFaces, 750);
     };
 
     reader.readAsDataURL(this.props.file);

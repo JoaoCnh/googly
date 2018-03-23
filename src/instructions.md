@@ -10,10 +10,10 @@ chrome://flags/#enable-experimental-web-platform-features
 
 ### And enable the experimental web platform features
 
-![enabling the api](src/0.png)
+![enabling the api](0.png)
 
 ### After enabling it you should see a **Relaunch Now** button on the bottom of the screen.
 
-![relaunch chrome](src/1.png)
+![relaunch chrome](1.png)
 
 ### Relaunch the browser please.
