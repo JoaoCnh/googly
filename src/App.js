@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faMedium from '@fortawesome/fontawesome-free-brands/faMedium';
+import faGithubSquare from '@fortawesome/fontawesome-free-brands/faGithubSquare';
+import faTwitterSquare from '@fortawesome/fontawesome-free-brands/faTwitterSquare';
 
 import Example from "./Example";
 
@@ -10,6 +14,23 @@ const Container = styled.div`
   width: 55%;
   margin: auto;
   padding: 8% 0 0;
+`;
+
+const Title = styled.h1`
+  color: #76b852;
+`;
+
+const Link = styled.a`
+  text-decoration: none;
+  margin: 0 10px 0 10px;
+  color: ${props => props.color};
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    color: ${props => props.color};
+  }
 `;
 
 const Inner = styled.div`
@@ -46,7 +67,21 @@ class App extends Component {
 
     return (
       <Container>
-        <Inner>{content}</Inner>
+        <Inner>
+          <Title>
+            {`Follow me @ `}
+            <Link href="https://medium.com/@joomiguelcunha" target="_blank" color="#03a87c">
+              <FontAwesomeIcon icon={faMedium} />
+            </Link>
+            <Link href="https://twitter.com/lokuzt" target="_blank" color="#1da1f2">
+              <FontAwesomeIcon icon={faTwitterSquare} />
+            </Link>
+            <Link href="https://github.com/JoaoCnh" target="_blank" color="#000000">
+              <FontAwesomeIcon icon={faGithubSquare} />
+            </Link>
+          </Title>
+          {content}
+        </Inner>
       </Container>
     );
   }
