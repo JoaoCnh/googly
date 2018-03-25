@@ -14,11 +14,11 @@ chrome://flags/#enable-experimental-web-platform-features
 
 ### And enable the experimental web platform features
 
-![enabling the api](${img0})
+![enabling the api](https://joaocnh.github.io/googly/${img0})
 
 ### After enabling it you should see a **Relaunch Now** button on the bottom of the screen.
 
-![relaunch chrome](${img1})
+![relaunch chrome](https://joaocnh.github.io/googly/${img1})
 
 ### Relaunch the browser please.
 `;

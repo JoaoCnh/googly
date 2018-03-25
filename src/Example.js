@@ -37,8 +37,6 @@ export default class Example extends Component {
             <Thumb key={`thumb-${index}`} file={file} index={index} />
           ))}
         </Files>
-
-        <hr />
       </div>
     );
   }
