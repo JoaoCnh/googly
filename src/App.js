@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import Example from "./Example";
 
-import instructions from "./instructions.md";
+import instructions from "./instructions";
 
 const Container = styled.div`
   width: 55%;
@@ -39,7 +39,7 @@ class App extends Component {
     let content = null;
 
     if (!this.state.isEnabled) {
-      content = <ReactMarkdown source={instructions} />;
+      content = <ReactMarkdown source={instructions} escapeHtml={false} />;
     } else {
       content = <Example />;
     }

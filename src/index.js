@@ -4,9 +4,6 @@ import { injectGlobal } from "styled-components";
 
 import App from "./App";
 
-import "./0.png";
-import "./1.png";
-
 injectGlobal`
     * { box-sizing: border-box; font-family: 'Roboto', sans-serif; }
     body { 
