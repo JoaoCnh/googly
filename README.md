@@ -4,4 +4,4 @@
 
 ### I wrote an article on medium about it.
 
-[Let’s play with Chrome’s Face Detection API](https://www.youtube.com)
+[Let’s play with Chrome’s Face Detection API](https://medium.com/@joomiguelcunha/lets-play-with-chrome-s-face-detection-api-ca13017a958f)
